@@ -1,0 +1,100 @@
+// flexbox for neumorphism containers //
+
+.flex_container {
+    display: flex;    
+    justify-content: space-between;
+    padding: 15rem 6rem 8rem;
+    margin-top: -7rem;
+    background-color: $primary-color;
+      
+        
+    .sub_flex {
+        margin: 0 auto 0;
+        width: 25%;
+        height: 40rem;
+        position: relative;
+        display: flex;
+        background-color: $primary-color;
+        box-shadow: -15px -15px 20px rgba($color-white, .9),
+            15px 15px 20px rgba($color-black, .05);
+        @include round(10px);
+
+        &:hover .overlay {
+            bottom: 0;
+            height: 40rem;
+            @include round(10px);
+            backface-visibility: hidden;
+        }
+
+        .subhead {
+            margin: auto;
+            color: $dark-gray;
+            display: flex;
+            font-size: 2rem;
+            @include default_bold(700);
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: $dark-gray;
+            overflow: hidden;
+            width: 100%;
+            bottom: 100%;
+            height: 0;
+            box-sizing: border-box;
+            text-align: justify;
+            transition: .6s ease-in;
+            @include round(10px);
+
+            .text {
+                background-color: $dark-gray;                
+            }
+
+            .bullet {
+                @include default_ul;                
+                
+                li {
+                    font-size: 1.5rem;   
+                    padding: 8px;                 
+                    margin: auto;
+                    color: $primary-color;
+                    background-color: $dark-gray;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .flex_container {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        .sub_flex {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 32rem;
+            &:not(:last-child) {
+                margin-bottom: 6rem;
+            }
+            &:hover .overlay {
+                height: 32rem;
+            }
+            
+        }
+        .subhead {            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+     
+    }
+
+    
+}
+

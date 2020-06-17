@@ -1,0 +1,22 @@
+// Unordered list default styles
+
+@mixin	default_ul {
+ 	list-style: none;
+	padding: 0;        
+	margin: 0;
+}
+
+// Border-radius
+// $unit: 8px specifies default rounded corners;
+
+@mixin round($unit: 8px) {
+	-webkit-border-radius: $unit;
+	        border-radius: $unit;
+}
+
+//font-weight mixins 
+//base font weight is 500
+
+@mixin default_bold($unit: 500) {
+	font-weight: $unit;
+}

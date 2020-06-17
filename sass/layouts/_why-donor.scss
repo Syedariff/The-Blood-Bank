@@ -1,0 +1,65 @@
+// Why become a donor //
+
+#donor_container {
+    position: relative;
+    height: 30rem;
+    background-color: $dark-gray;
+    
+    .sub_hero {
+        width: 100%;
+        height: 57rem;
+        filter: grayscale(85%);
+    }
+
+    .donor_head {
+        text-align: $center;
+        text-transform: uppercase;
+        position: absolute;
+        top: 10%;
+        left: 2%;
+        color: $primary-color;
+        @include default_bold(700);
+        font-size: 2rem;        
+        border: 3px solid $secondary-color;
+        padding: 2rem;
+
+        .hovcolor {
+            background: inherit;
+            color: $secondary-color;
+            border: $non;
+            font-size: inherit;
+            text-transform: uppercase;            
+            outline: $non;
+            cursor: $point;
+            text-decoration: underline;           
+        }
+    }
+    
+    #donor_para {
+        position: absolute;
+        top: 35% !important;
+        text-indent: 20px;               
+        animation: moveLeft .6s ease-in-out;   
+        line-height: 2rem;
+        font-size: 1.8rem;
+        padding: 1.2rem;
+        color: $primary-color;
+        text-shadow: .9px .9px 1.5px $color-black;
+        text-align: justify;  
+        display: $non;
+        
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    #donor_container {
+        height: 35rem;
+    }
+
+    .donor_head {
+        position: absolute;
+        top: 10%;
+    }
+}
+
+

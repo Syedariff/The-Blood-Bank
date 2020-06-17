@@ -1,0 +1,28 @@
+// footer container //
+
+#footer {
+    background-color: $dark-gray;
+
+    .footer-details {
+        @include default_ul;
+        background: $dark-gray;
+
+        li {
+            font-size: 1.6rem;
+            color: $primary-color;
+            padding: 1rem 2rem;
+
+            a, p {
+                display: inline-block;                
+            }        
+
+            .insta-link {
+                color: $primary-color;
+            }
+
+            .fa {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+// Blood-groups container //
+
+.gray_container {    
+    padding: 4rem 1.5rem;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    padding-top: 2rem;
+
+    .head_con {
+        text-align: $center;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        color: $dark-gray;
+    }
+
+    .para_blood1 {
+        text-indent: 20px;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        color: $dark-gray;
+        text-align: justify;
+    }
+
+    .blood_list {        
+        list-style: inside;
+        
+        li {            
+            margin-left: 6rem;
+            font-size: 1.6rem;
+            color: $dark-gray;
+            background-color: inherit;
+        }
+    }
+}

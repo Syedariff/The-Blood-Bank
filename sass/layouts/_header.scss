@@ -1,0 +1,128 @@
+// header container of the page //
+
+.header {
+    background: url("../images/banner1.jpg") no-repeat;
+    filter: grayscale(40%);
+    width: 100%;
+    background-size: cover;
+    height: 95vh;
+    font-size: 3.2rem;
+    @include default_bold(700);
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    .icon-main {
+        font-size: 5rem;
+        position: absolute;
+        float: left;
+        top: 1rem;
+        left: 3rem;
+        &::after {
+            clear: both;
+        }
+        .fa-tint {            
+            color: $secondary-color;
+        }
+    }
+
+    .nav-container {
+        position: relative;
+
+        .nav {
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            @include default_ul;
+
+            .sub {
+                padding: 1.1rem 1.5rem;
+                font-size: 1.6rem;
+                &:hover {
+                    background-color: $dark-gray;
+                    @include round;
+                    box-shadow: 1px 1px 6px $color-black;
+                    cursor: $point;
+                }
+
+                a {
+                    text-decoration: $non;
+                    color: $primary-color;
+                    @include default_bold(700);
+                    outline: $non;
+                    border: $non;
+
+                }
+            }
+
+            .sub1 {
+                margin-right: 3rem;
+            }
+
+            .sub2 {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    .headtext {
+        font-family: "impact", sans-serif;
+        font-size: 4rem;
+        padding: 0;
+        @include default_bold(700);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 8px;
+        color: $secondary-color;
+        text-shadow: .4px .2px 1.5px $color-white;
+        animation: textanimation .7s ease-out;
+
+        .subcolor {
+            color: $primary-color;
+            display: inline;
+            font-size: 4rem;
+            font-family: inherit;
+            @include default_bold(400);
+            opacity: 75%;
+        }
+    }
+
+    .donate {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 9rem;
+
+        .btn-main {
+            color: $primary-color;
+            text-decoration: $non;
+            padding: 1rem 1.4rem;
+            background-color: $dark-gray;
+            &:link,
+            &:visited {
+                font-size: 1.6rem;                
+                @include round(12px);
+                display: inline-block;
+                box-shadow: 1px 1px 8px $color-black;
+                outline: $non;
+            }
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+
+            &:active {
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-container {
+        display: none   ;
+    }
+}

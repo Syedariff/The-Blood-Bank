@@ -1,0 +1,185 @@
+// both signup and signin page have same class and id(same styles)
+
+.container {
+    display: flex;
+    position: relative;
+    
+    img {      
+        height: 99vh;        
+        margin: 0;
+        max-width: 90%;
+        padding-top: 7rem;
+        
+    }
+    .pull_container {
+        .pull {        
+            height: 40px;
+            width: 40px;    
+            display: flex;
+            align-items: $center;
+            justify-content: $center;
+            font-size: 3rem;
+            color: $secondary-color;
+            position: absolute;
+            right: 8.5%;
+            top: 50%;    
+            outline: $non;
+            transition: right .6s;
+            cursor: $point;
+        }
+
+        p {
+            position: absolute;
+            top: 51%;
+            right: 3%;
+            color: $secondary-color;
+            font-size: 1.8rem;
+            transition: right .6s;
+            @include default_bold(700);
+        }
+    }
+
+    #log_container {
+        background-color: $secondary-color;
+        position: absolute;
+        right: 0;
+        max-width: 90%;        
+        height: 100%;
+        padding: 10rem 8rem;        
+        border-top-left-radius: 200px;
+        border-bottom-left-radius: 200px;    
+        animation: logleft .5s ease-in-out;
+        display: $non;              
+        
+        .box {
+            top: 10rem;                     
+            box-sizing: border-box;
+            @include round(10px);
+            position: relative; 
+            .arrow-box {
+                position: absolute;
+                top: -5rem;                             
+            }
+
+            .htext {
+                left: 10rem;                               
+                position: absolute;
+                color: $primary-color;
+                font-size: 2rem;
+            }
+
+            .arrow {
+                position: absolute;
+                left: 7rem;
+                font-size: 2rem;
+                color: $primary-color;
+            }            
+
+            .inputbox {
+                position: relative;
+                input {
+                    width: 300px;
+                    background-color: $color-white;
+                    padding: 10px 0;
+                    font-size: 1.2rem;
+                    margin-bottom: 3rem;
+                    border: $non;
+                    border-bottom: 1px solid $primary-color;
+                    outline: $non;
+                    background: $trans;
+                    color: $primary-color;
+                    &:focus~label,
+                    &:valid~label {
+                        top: -1.8rem;
+                        left: 0;
+                        color: rgba(255, 255, 255, 0.801);
+                        font-size: 1.4rem;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 1rem 0;
+                    font-size: 1.7rem;
+                    color: $primary-color;    
+                    pointer-events: $non;
+                    transition: .5s;
+                }
+            }
+
+            form {
+                position: relative;               
+                .submit_btn {
+                    position: absolute;
+                    background: $trans;
+                    border: $non;
+                    outline: $non;
+                    color: $color-white;
+                    background: $dark-gray;
+                    box-shadow: 1px 1px 8px $color-black;
+                    padding: 1rem 2rem;
+                    cursor: $point;
+                    @include round(5px);
+                    left: 35%;
+                    font-size: 1.4rem;
+                    @include default_bold(500);
+                }
+            }
+            
+            .sign {
+                margin-top: 5.5rem;
+                margin-left: 4.5rem;       
+                               
+                .link {
+                    color: $dark-gray;
+                    @include default_bold(600);
+                    font-size: 1.4rem;                    
+                }
+
+                .indent{    
+                    color: $primary-color;
+                    text-shadow: 1px 1px 2px $secondary-color;                    
+                    &::before {
+                        content: "";
+                        margin-left: 4px;
+                    }
+                    
+                }
+            }
+        }        
+
+        .submit_btn {
+            &:hover {
+                transform: translateY(-3px);
+            }
+
+            &:active {
+                transform: translateY(-1px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        display: block;     
+        img {
+            max-width: 100%;
+            height: 100vh;
+        }
+        .pull_container {
+            display: none;
+        }
+
+        #log_container {
+            display: block;
+            animation: none;
+            max-width: 90%;
+        }
+
+    }
+}
+
+

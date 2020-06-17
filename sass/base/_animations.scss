@@ -1,0 +1,45 @@
+// header text animation
+
+@keyframes textanimation {
+    0% {
+        left: 48%;
+    }
+
+    80% {
+        left: 50.5%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+
+
+// animation for when clicking why become a donor
+
+@keyframes moveLeft {
+    0% {        
+        opacity: .1
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Signin box animation
+
+@keyframes logleft {
+    0% {        
+        right: 0%;
+    }
+
+    50% {
+        right: .5%;
+        
+    }
+
+    100% {    
+        right: 0%;
+    }
+}
