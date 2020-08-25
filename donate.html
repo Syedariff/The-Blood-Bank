@@ -11,60 +11,68 @@
     <link rel="icon" type="image/png" sizes="32x32" href="vendors/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="vendors/favicon/favicon-16x16.png">
     <link rel="manifest" href="vendors/favicon/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="container_img">
+    <main class="container">
+        <section class="container_img">
             <img src="images/signup.png" alt="login image">
-        </div>
-        <div class="pull_container">
-            <span class="pull" onclick="document.getElementById('log_container').style.display='block'">
+        </section>
+        <section class="pull_container">
+            <span class="pull">
                 <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
             </span>
-            <p class="pull_para">Sign up</p>
-        </div>
-        <div id="log_container">
-            <div class="box">
+            <p class="pull_para para-0">Sign up</p>
+        </section>
+        <section id="log_container">
+            <div class="box box1">
                 <div class="arrow-box">
-                    <a href="Home.html" class="arrow" title="Home">
+                    <a href="index.html" class="arrow" title="Home">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i>
                     </a>
-                    <h2 class="htext">                                
+                    <h2 class="htext">
                         BloodBank
-                    </h2>  
-                </div>                
-                <form method="post" action="#" autocomplete="off">
+                    </h2>
+                </div>
+                <form id="form" autocomplete="off">
                     <div class="inputbox">
-                        <input type="text" name="First name" required>
-                        <label for="Fname">First name</label>
+                        <input type="text" name="First name" id="First-name" required="">
+                        <label for="First-name">First name</label>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="Last name" required>
-                        <label for="Lname">Last name</label>
+                        <input type="text" name="Last name" id="Last-name" required="">
+                        <label for="Last-name">Last name</label>
                     </div>
                     <div class="inputbox">
-                        <input type="email" name="E-mail" required>
+                        <input type="email" name="E-mail" id="E-mail" required="">
                         <label for="E-mail">E-mail</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" name="Password" required>
+                        <input type="password" name="Password" id="password" required="" onfocus="iconShow(this)"> 
                         <label for="Password">Password</label>
+                        <i class="far fa-eye"></i>
+                        <small></small>
                     </div>
-                    <div>
-                    <input type="submit" value="Sign up" class="submit_btn">
-                    </div>                                       
+                    <div class="inputbox">
+                        <input type="password" name="Password" id="confirm-password" required="">
+                        <label for="confirm-Password">Confirm Password</label>
+                    </div>
+                    <div class="submitbox">
+                        <input type="submit" value="Sign up" class="submit_btn">
+                    </div>
                 </form>
                 <div class="sign">
-                    <p class="link">                            
+                    <p class="link">
                         Already have a account
                         <a href="login.html" class="indent"> Sign in</a>
                     </p>
-                </div>   
+                </div>
             </div>
-        </div>
-    </div>
-
-    
+        </section>
+    </main>
+    <!-- script file -->
+    <script src="js/form.js"></script>
+</body>
 
 </html>
