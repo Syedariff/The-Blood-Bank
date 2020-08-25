@@ -1,37 +1,43 @@
 // flexbox for neumorphism containers //
 
 .flex_container {
-    display: flex;    
-    justify-content: space-between;
-    padding: 15rem 6rem 8rem;
-    margin-top: -7rem;
+    display: flex;
+    -webkit-flex-direction: column;
+               -ms-flex-direction: column;
+                   flex-direction: column;       
+    align-content: space-between;
+    padding: 16rem 2rem 8rem;
+    margin-top: -12rem;
     background-color: $primary-color;
       
         
     .sub_flex {
-        margin: 0 auto 0;
-        width: 25%;
-        height: 40rem;
+        margin: 0 auto;
+        width: 100%;
+        height: 45rem;
         position: relative;
         display: flex;
+        justify-content: center;
         background-color: $primary-color;
         box-shadow: -15px -15px 20px rgba($color-white, .9),
             15px 15px 20px rgba($color-black, .05);
         @include round(10px);
-
+        &:not(:last-child) {
+            margin-bottom: 6rem;
+        }
+        // when move the cursor to overlay then text will be displayed
         &:hover .overlay {
             bottom: 0;
-            height: 40rem;
+            height: 45rem;
             @include round(10px);
-            backface-visibility: hidden;
         }
 
         .subhead {
             margin: auto;
-            color: $dark-gray;
-            display: flex;
+            color: $dark-gray;          
             font-size: 2rem;
             @include default_bold(700);
+            text-align: center;
         }
 
         .overlay {
@@ -43,14 +49,10 @@
             width: 100%;
             bottom: 100%;
             height: 0;
-            box-sizing: border-box;
             text-align: justify;
+            backface-visibility: hidden;
             transition: .6s ease-in;
-            @include round(10px);
-
-            .text {
-                background-color: $dark-gray;                
-            }
+            @include round(10px);            
 
             .bullet {
                 @include default_ul;                
@@ -67,21 +69,22 @@
     }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (min-width: 770px) {
     .flex_container {
         display: flex;
-        flex-direction: column;
-        align-content: space-between;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        
         .sub_flex {
             position: relative;
-            display: block;
-            width: 100%;
-            height: 32rem;
+            width: 25%;
+            height: 45rem;
             &:not(:last-child) {
                 margin-bottom: 6rem;
             }
             &:hover .overlay {
-                height: 32rem;
+                height: 45rem;
             }
             
         }
@@ -90,11 +93,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-
-     
+        }     
     }
-
-    
 }
-

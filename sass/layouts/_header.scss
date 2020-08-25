@@ -1,43 +1,49 @@
 // header container of the page //
 
 .header {
-    background: url("../images/banner1.jpg") no-repeat;
-    filter: grayscale(40%);
-    width: 100%;
-    background-size: cover;
-    height: 95vh;
-    font-size: 3.2rem;
+    height: 97%;
     @include default_bold(700);
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    #Main_image {
+        width: 100%;
+        max-width: 100%;
+        height: 97vh;
+        filter: grayscale(20%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        background-size: cover;
+    }
 
     .icon-main {
-        font-size: 5rem;
+        font-size: 4rem; // 10
         position: absolute;
         float: left;
-        top: 1rem;
-        left: 3rem;
+        top: 10px;
+        left: 28px;
         &::after {
             clear: both;
         }
-        .fa-tint {            
+
+        .fa-tint {
             color: $secondary-color;
         }
     }
 
     .nav-container {
-        position: relative;
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        visibility: hidden;
 
-        .nav {
+        .nav__list {
             display: flex;
-            position: absolute;
-            right: 0;
-            top: 1rem;
             @include default_ul;
+
 
             .sub {
                 padding: 1.1rem 1.5rem;
                 font-size: 1.6rem;
+
                 &:hover {
                     background-color: $dark-gray;
                     @include round;
@@ -66,7 +72,6 @@
     }
 
     .headtext {
-        font-family: "impact", sans-serif;
         font-size: 4rem;
         padding: 0;
         @include default_bold(700);
@@ -74,18 +79,18 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        letter-spacing: 8px;
+        letter-spacing: 2px;
         color: $secondary-color;
-        text-shadow: .4px .2px 1.5px $color-white;
+        text-shadow: .4px .2px 1px $color-white;
         animation: textanimation .7s ease-out;
+        text-align: center;
 
         .subcolor {
             color: $primary-color;
             display: inline;
             font-size: 4rem;
-            font-family: inherit;
-            @include default_bold(400);
-            opacity: 75%;
+            @include default_bold(700);
+            opacity: 85%;
         }
     }
 
@@ -99,12 +104,13 @@
         .btn-main {
             color: $primary-color;
             text-decoration: $non;
-            padding: 1rem 1.4rem;
-            background-color: $dark-gray;
+            padding: 1.1rem 1.5rem;
+            background-color: $pure-gray;
+
             &:link,
             &:visited {
-                font-size: 1.6rem;                
-                @include round(12px);
+                font-size: 1.6rem;
+                @include round;
                 display: inline-block;
                 box-shadow: 1px 1px 8px $color-black;
                 outline: $non;
@@ -121,8 +127,8 @@
     }
 }
 
-@media screen and (max-width: 576px) {
-    .nav-container {
-        display: none   ;
+@media screen and (min-width: 600px) {
+    .nav__list {
+        visibility: visible;
     }
 }

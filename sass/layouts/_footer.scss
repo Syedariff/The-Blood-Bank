@@ -3,26 +3,28 @@
 #footer {
     background-color: $dark-gray;
 
+    .footer__header{
+        color: $primary-color;
+        padding: 1.5rem 2rem 1rem;
+    }
+
     .footer-details {
         @include default_ul;
         background: $dark-gray;
+        display: flex;
+        padding: 0 0 1rem 1rem;
 
         li {
-            font-size: 1.6rem;
+            font-size: 2rem;
             color: $primary-color;
-            padding: 1rem 2rem;
-
-            a, p {
-                display: inline-block;                
-            }        
-
-            .insta-link {
+            padding: 0 1rem;  
+            
+            .far, .fab {
                 color: $primary-color;
-            }
-
-            .fa {
-                font-size: 1.6rem;
-            }
+                &:hover {
+                    color: #db3236;
+                }
+            }          
         }
     }
 }

@@ -2,26 +2,21 @@
 
 #donor_container {
     position: relative;
-    height: 30rem;
+    height: 56rem;
     background-color: $dark-gray;
-    
-    .sub_hero {
-        width: 100%;
-        height: 57rem;
-        filter: grayscale(85%);
-    }
 
     .donor_head {
         text-align: $center;
         text-transform: uppercase;
         position: absolute;
-        top: 10%;
-        left: 2%;
+        top: 7%;
+        left: 5%;
         color: $primary-color;
         @include default_bold(700);
-        font-size: 2rem;        
-        border: 3px solid $secondary-color;
-        padding: 2rem;
+        font-size: 2rem;   
+        padding: 1rem;
+        box-shadow: -8px -8px 10px rgba($color-black, .3),
+            8px 8px 10px rgba($color-white, .05);      
 
         .hovcolor {
             background: inherit;
@@ -36,13 +31,16 @@
     }
     
     #donor_para {
-        position: absolute;
-        top: 35% !important;
+        -webkit-transform: translateY(10rem);
+           -moz-transform: translateY(10rem);
+            -ms-transform: translateY(10rem);
+             -o-transform: translateY(10rem);
+                transform: translateY(10rem);
         text-indent: 20px;               
         animation: moveLeft .6s ease-in-out;   
         line-height: 2rem;
         font-size: 1.8rem;
-        padding: 1.2rem;
+        padding: 1.2rem 2.5rem;
         color: $primary-color;
         text-shadow: .9px .9px 1.5px $color-black;
         text-align: justify;  
@@ -51,14 +49,28 @@
     }
 }
 
-@media screen and (max-width: 1140px) {
+// // @media screen and (max-width: 1140px) {
+// //     #donor_container {
+// //         height: 35rem;
+// //     }
+
+// //     .donor_head {
+// //         position: absolute;
+// //         top: 10%;
+// //     }
+// }
+
+@media screen and (min-width: 540px) {
     #donor_container {
-        height: 35rem;
+        height: 33rem;
     }
 
-    .donor_head {
-        position: absolute;
-        top: 10%;
+    #donor_para {
+        -webkit-transform: translateY(9rem);
+           -moz-transform: translateY(9rem);
+            -ms-transform: translateY(9rem);
+             -o-transform: translateY(9rem);
+                transform: translateY(9rem);
     }
 }
 
